@@ -1,0 +1,58 @@
+{
+  "slug": "yishnu_1996-10-17",
+  "count": 13,
+  "yogas": [
+    {
+      "name": "Dhana Yoga",
+      "strength": "strong"
+    },
+    {
+      "name": "Lakshmi Yoga",
+      "strength": "weak"
+    },
+    {
+      "name": "Raja Yoga",
+      "strength": "weak"
+    },
+    {
+      "name": "Dharma-Karmadhipati Yoga",
+      "strength": "weak"
+    },
+    {
+      "name": "Vipreet Raja Yoga",
+      "strength": "medium"
+    },
+    {
+      "name": "Neecha Bhanga Raja Yoga",
+      "strength": "weak"
+    },
+    {
+      "name": "Gajakesari Yoga",
+      "strength": "strong"
+    },
+    {
+      "name": "Daridra Yoga",
+      "strength": "medium"
+    },
+    {
+      "name": "Mangal Dosha",
+      "strength": "weak"
+    },
+    {
+      "name": "Vish Yoga",
+      "strength": "weak"
+    },
+    {
+      "name": "Shapit Dosha",
+      "strength": "weak"
+    },
+    {
+      "name": "Paap Kartari Yoga",
+      "strength": "medium"
+    },
+    {
+      "name": "Moksha Yoga",
+      "strength": "medium"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "_note": "Planet x angle effect table for astrocartography. AC=Ascendant, DC=Descendant, MC=Midheaven, IC=Imum Coeli. Effects describe the broad life-theme amplified when a person relocates near that planetary line.",
+  "Sun": {
+    "AC": { "effect": "Strong self-expression, visibility, leadership; ego and identity are foregrounded. Good for building authority." },
+    "DC": { "effect": "Relationships with powerful or prominent people; partners shape identity. Watch for ego clashes." },
+    "MC": { "effect": "Career elevation, recognition, public standing. Favourable for ambition and reputation." },
+    "IC": { "effect": "Focus on home, roots, father, ancestry. Inner foundation strengthens; less public momentum." }
+  },
+  "Moon": {
+    "AC": { "effect": "Heightened sensitivity and emotional presence; nurturing, intuitive, publicly relatable." },
+    "DC": { "effect": "Emotionally bonded relationships; partners feel like family. Strong for love and belonging." },
+    "MC": { "effect": "Career tied to the public, care, food, property, or emotional resonance. Fluctuating visibility." },
+    "IC": { "effect": "Deep sense of home and security; strong for family life, real estate, emotional healing." }
+  },
+  "Mars": {
+    "AC": { "effect": "Drive, courage, physical energy; assertive and competitive. Risk of conflict or accidents." },
+    "DC": { "effect": "Passionate but combative relationships; attracts assertive partners. Friction possible." },
+    "MC": { "effect": "Ambitious, hard-driving career; good for entrepreneurship, engineering, sport, military." },
+    "IC": { "effect": "Restless home life, renovation energy, family tension. Channel the drive into projects." }
+  },
+  "Mercury": {
+    "AC": { "effect": "Sharp communication, learning, networking; mentally quick and adaptable." },
+    "DC": { "effect": "Intellectual partnerships; relationships built on conversation and shared ideas." },
+    "MC": { "effect": "Career in writing, teaching, trade, media, tech; mobility and versatility favoured." },
+    "IC": { "effect": "Busy, idea-filled home; good for study, remote work, family communication." }
+  },
+  "Jupiter": {
+    "AC": { "effect": "Optimism, growth, good fortune; broadened horizons and a generous public image." },
+    "DC": { "effect": "Beneficial, expansive relationships; partners who teach, mentor, or open doors." },
+    "MC": { "effect": "Career elevation, authority, recognition; favourable for professional growth and public standing." },
+    "IC": { "effect": "Abundant, supportive home base; good for family, property, and spiritual grounding." }
+  },
+  "Venus": {
+    "AC": { "effect": "Charm, attractiveness, ease; aesthetically and socially favoured." },
+    "DC": { "effect": "Strong for love, marriage, and harmonious partnership. A classic relocation line for relationships." },
+    "MC": { "effect": "Career in arts, beauty, luxury, diplomacy; reputation for grace and likeability." },
+    "IC": { "effect": "Beautiful, peaceful home; comfort, pleasure, and domestic harmony." }
+  },
+  "Saturn": {
+    "AC": { "effect": "Discipline, seriousness, slow maturation; heavy responsibility, but lasting structure." },
+    "DC": { "effect": "Committed, durable but demanding relationships; older or serious partners." },
+    "MC": { "effect": "Career through persistence and long effort; authority earned slowly. Hard but stable." },
+    "IC": { "effect": "Restrictive or burdensome home life; isolation possible. Build foundations patiently." }
+  },
+  "Rahu": {
+    "AC": { "effect": "Unconventional identity, ambition, foreign influence; sudden rises, instability." },
+    "DC": { "effect": "Unusual or foreign partnerships; intense, karmic, sometimes destabilising relationships." },
+    "MC": { "effect": "Sudden career shifts, unconventional paths, foreign opportunities; volatile recognition." },
+    "IC": { "effect": "Unsettled roots, foreign home, family disruption; restless domestic life." }
+  },
+  "Ketu": {
+    "AC": { "effect": "Detachment, spirituality, introspection; reduced worldly drive, strong inner life." },
+    "DC": { "effect": "Detached or karmic relationships; partners come and go. Difficulty with worldly bonding." },
+    "MC": { "effect": "Career feels unfulfilling or spiritually oriented; worldly ambition fades." },
+    "IC": { "effect": "Spiritually focused home, withdrawal, ancestral karma; good for retreat, poor for status." }
+  }
+}

@@ -1,0 +1,485 @@
+{
+  "_note": "Classical yoga library. lib/yoga-engine.js reads detection_rule.type and either evaluates it declaratively or routes detection_rule.custom to a dedicated function. Sources: BPHS, Phaladeepika, Saravali, Jaimini Sutras. Do not modify detection rules without flagging the classical source.",
+  "_rule_types": "kendra-from-moon | conjunction | planets-in-houses | planet-in-houses | dignity-in-kendra | moon-yoga | kartari | lord-in-houses | lord-association | custom",
+  "yogas": [
+    {
+      "name": "Dhana Yoga",
+      "name_sanskrit": "धन योग",
+      "category": "wealth",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "custom", "custom": "dhanaYoga", "lord_pairs": [[1,2],[1,5],[1,9],[1,11],[2,5],[2,9],[2,11],[5,9],[5,11],[9,11]] },
+      "dimensions_affected": ["wealth", "career", "general"],
+      "strength_assessment": {
+        "weak": "lords connected only by distant aspect, one lord in dusthana",
+        "medium": "lords in mutual aspect or same house, neither debilitated",
+        "strong": "lords conjunct or in exchange, in own/exalted dignity, in kendra/trikona"
+      },
+      "effects": "Wealth accumulation through the matters of the linked houses. Two or more of houses 1/2/5/9/11 lord-linked forms a money-generating combination.",
+      "negation_conditions": ["both lords debilitated", "both lords combust", "lords hemmed by malefics"]
+    },
+    {
+      "name": "Lakshmi Yoga",
+      "name_sanskrit": "लक्ष्मी योग",
+      "category": "wealth",
+      "classical_source": "Phaladeepika",
+      "detection_rule": { "type": "custom", "custom": "lakshmiYoga" },
+      "dimensions_affected": ["wealth", "general"],
+      "strength_assessment": {
+        "weak": "9th lord strong but Lagna lord weak",
+        "medium": "9th lord in own/exalted in kendra or trikona, Lagna lord reasonably placed",
+        "strong": "9th lord exalted in kendra/trikona AND Lagna lord strong and well placed"
+      },
+      "effects": "Lasting prosperity, fortune, reputation, grace. Wealth that endures.",
+      "negation_conditions": ["9th lord debilitated or combust", "Lagna lord in dusthana"]
+    },
+    {
+      "name": "Maha Lakshmi Yoga",
+      "category": "wealth",
+      "classical_source": "Saravali",
+      "detection_rule": { "type": "conjunction", "planets": ["Jupiter", "Venus"], "houses": [2, 5, 9] },
+      "dimensions_affected": ["wealth"],
+      "strength_assessment": {
+        "weak": "Jupiter and Venus in the houses but afflicted",
+        "medium": "both unafflicted in 2/5/9",
+        "strong": "both in own/exalted in 2/5/9 with benefic support"
+      },
+      "effects": "Abundance, luxury, financial grace.",
+      "negation_conditions": ["either planet debilitated or combust"]
+    },
+    {
+      "name": "Vasumati Yoga",
+      "category": "wealth",
+      "classical_source": "Saravali",
+      "detection_rule": { "type": "planets-in-houses", "planets_any": ["Jupiter", "Venus", "Mercury"], "houses": [3, 6, 10, 11], "min_count": 2 },
+      "dimensions_affected": ["wealth"],
+      "strength_assessment": {
+        "weak": "only 2 benefics in upachaya, mildly placed",
+        "medium": "2-3 benefics in upachaya houses",
+        "strong": "all 3 natural benefics in upachaya houses, dignified"
+      },
+      "effects": "Wealth that compounds over time; self-made abundance.",
+      "negation_conditions": ["benefics debilitated"]
+    },
+    {
+      "name": "Chandra-Mangal Yoga",
+      "category": "wealth",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "conjunction", "planets": ["Moon", "Mars"], "allow_aspect": true },
+      "dimensions_affected": ["wealth", "relationships", "health"],
+      "strength_assessment": {
+        "weak": "Moon-Mars only by distant aspect",
+        "medium": "Moon-Mars mutual aspect or in 7th from each other",
+        "strong": "Moon-Mars conjunct or in exchange"
+      },
+      "effects": "Earnings through enterprise and drive; can also bring emotional harshness or volatility.",
+      "negation_conditions": ["both in dusthana and afflicted"]
+    },
+    {
+      "name": "Adhi Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "moon-yoga", "variant": "adhi" },
+      "dimensions_affected": ["wealth", "career", "relationships", "general"],
+      "strength_assessment": {
+        "weak": "one benefic in 6/7/8 from Moon",
+        "medium": "two benefics in 6/7/8 from Moon",
+        "strong": "all three natural benefics in 6/7/8 from Moon, dignified"
+      },
+      "effects": "Leadership, success, abundance, good health, well-being.",
+      "negation_conditions": ["benefics severely afflicted"]
+    },
+    {
+      "name": "Raja Yoga",
+      "category": "raja",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "custom", "custom": "rajaYoga" },
+      "dimensions_affected": ["career", "wealth", "general"],
+      "strength_assessment": {
+        "weak": "kendra-trikona lords linked only by aspect, one weak",
+        "medium": "kendra and trikona lords associated, both reasonably placed",
+        "strong": "kendra-trikona lords conjunct or in exchange, in own/exalted dignity"
+      },
+      "effects": "Authority, leadership, status, power, recognition.",
+      "negation_conditions": ["forming lords debilitated or combust", "lords in dusthana without Vipreet"]
+    },
+    {
+      "name": "Dharma-Karmadhipati Yoga",
+      "category": "raja",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "lord-association", "set_a": [9], "set_b": [10] },
+      "dimensions_affected": ["career", "general"],
+      "strength_assessment": {
+        "weak": "9th and 10th lords linked by aspect only",
+        "medium": "9th and 10th lords associated, well placed",
+        "strong": "9th and 10th lords conjunct or in exchange in kendra/trikona"
+      },
+      "effects": "Major career success with name and fame; the single most powerful career raja yoga.",
+      "negation_conditions": ["either lord debilitated or combust"]
+    },
+    {
+      "name": "Vipreet Raja Yoga",
+      "name_sanskrit": "विपरीत राज योग",
+      "category": "raja",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "custom", "custom": "vipreetRajaYoga" },
+      "dimensions_affected": ["career", "wealth", "obstacles", "health"],
+      "strength_assessment": {
+        "weak": "one dusthana lord in another dusthana but aspected by benefics (dilutes the yoga)",
+        "medium": "dusthana lords (6/8/12) placed in dusthanas, unaspected by benefics",
+        "strong": "dusthana lords interlinked in dusthanas, conjunct, no benefic aspect"
+      },
+      "effects": "Paradoxical rise — adversity converts to success. Harsha (6th lord in 6/8/12), Sarala (8th lord), Vimala (12th lord).",
+      "negation_conditions": ["dusthana lord strongly aspected by benefics", "dusthana lord exalted (becomes ordinary)"]
+    },
+    {
+      "name": "Neecha Bhanga Raja Yoga",
+      "name_sanskrit": "नीच भंग राज योग",
+      "category": "raja",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "custom", "custom": "neechaBhanga" },
+      "dimensions_affected": ["career", "wealth", "general"],
+      "strength_assessment": {
+        "weak": "one cancellation condition met",
+        "medium": "two cancellation conditions met",
+        "strong": "multiple cancellations + debilitated planet in kendra from Lagna or Moon"
+      },
+      "effects": "A debilitated planet whose debilitation is cancelled — late-blooming exceptional results in that planet's significations.",
+      "negation_conditions": ["no cancellation condition met (then it stays a plain debilitation)"]
+    },
+    {
+      "name": "Ruchaka Yoga",
+      "category": "panch-mahapurusha",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "dignity-in-kendra", "planet": "Mars" },
+      "dimensions_affected": ["career", "health", "general"],
+      "strength_assessment": {
+        "weak": "Mars in own sign in kendra but aspected by malefics",
+        "medium": "Mars in own sign in a kendra",
+        "strong": "Mars exalted in a kendra with benefic aspect"
+      },
+      "effects": "Courage, leadership, physical strength, success in technical/uniformed/competitive fields.",
+      "negation_conditions": ["Mars combust", "Mars debilitated"]
+    },
+    {
+      "name": "Bhadra Yoga",
+      "category": "panch-mahapurusha",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "dignity-in-kendra", "planet": "Mercury" },
+      "dimensions_affected": ["career", "education", "wealth", "general"],
+      "strength_assessment": {
+        "weak": "Mercury in own sign in kendra but afflicted",
+        "medium": "Mercury in own sign in a kendra",
+        "strong": "Mercury exalted in a kendra with benefic aspect"
+      },
+      "effects": "Intelligence, scholarship, eloquence, success in business and communication.",
+      "negation_conditions": ["Mercury combust", "Mercury debilitated"]
+    },
+    {
+      "name": "Hamsa Yoga",
+      "category": "panch-mahapurusha",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "dignity-in-kendra", "planet": "Jupiter" },
+      "dimensions_affected": ["career", "education", "spirituality", "general"],
+      "strength_assessment": {
+        "weak": "Jupiter in own sign in kendra but afflicted",
+        "medium": "Jupiter in own sign in a kendra",
+        "strong": "Jupiter exalted in a kendra with benefic aspect"
+      },
+      "effects": "Wisdom, righteousness, respect, philosophical depth, dignified character.",
+      "negation_conditions": ["Jupiter combust", "Jupiter debilitated"]
+    },
+    {
+      "name": "Malavya Yoga",
+      "category": "panch-mahapurusha",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "dignity-in-kendra", "planet": "Venus" },
+      "dimensions_affected": ["career", "property", "relationships", "wealth"],
+      "strength_assessment": {
+        "weak": "Venus in own sign in kendra but afflicted",
+        "medium": "Venus in own sign in a kendra",
+        "strong": "Venus exalted in a kendra with benefic aspect"
+      },
+      "effects": "Luxury, comfort, beauty, vehicles, refined tastes, harmonious life.",
+      "negation_conditions": ["Venus combust", "Venus debilitated"]
+    },
+    {
+      "name": "Sasa Yoga",
+      "category": "panch-mahapurusha",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "dignity-in-kendra", "planet": "Saturn" },
+      "dimensions_affected": ["career", "general"],
+      "strength_assessment": {
+        "weak": "Saturn in own sign in kendra but afflicted",
+        "medium": "Saturn in own sign in a kendra",
+        "strong": "Saturn exalted in a kendra with benefic aspect"
+      },
+      "effects": "Authority through persistence, careers in management, judiciary, mining, labour, large organisations.",
+      "negation_conditions": ["Saturn combust", "Saturn debilitated"]
+    },
+    {
+      "name": "Gajakesari Yoga",
+      "name_sanskrit": "गजकेसरी योग",
+      "category": "general-benefic",
+      "classical_source": "BPHS, Phaladeepika",
+      "detection_rule": { "type": "kendra-from-moon", "planets": ["Jupiter"], "reference_planet": "Moon" },
+      "dimensions_affected": ["career", "wealth", "education", "marriage", "general"],
+      "strength_assessment": {
+        "weak": "Jupiter or Moon in dusthana, or afflicted by Rahu/Ketu/Saturn",
+        "medium": "Jupiter in kendra from Moon, both unafflicted",
+        "strong": "Jupiter exalted/own in kendra from Moon, with benefic aspect"
+      },
+      "effects": "Intelligence, wisdom, prosperity, fame, dignified character, respect in society.",
+      "negation_conditions": ["Jupiter or Moon debilitated", "Jupiter combust", "heavy affliction"]
+    },
+    {
+      "name": "Budhaditya Yoga",
+      "category": "general-benefic",
+      "classical_source": "Phaladeepika",
+      "detection_rule": { "type": "conjunction", "planets": ["Sun", "Mercury"] },
+      "dimensions_affected": ["career", "education", "general"],
+      "strength_assessment": {
+        "weak": "Sun and Mercury conjunct but Mercury deeply combust",
+        "medium": "Sun and Mercury in same house, Mercury not deeply combust",
+        "strong": "Sun-Mercury in own/exalted sign, Mercury beyond combustion orb"
+      },
+      "effects": "Intelligence, communication skill, analytical ability, success in intellectual professions.",
+      "negation_conditions": ["Mercury deeply combust (within ~3°)"]
+    },
+    {
+      "name": "Saraswati Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "planets-in-houses", "planets_all": ["Mercury", "Jupiter", "Venus"], "houses": [1, 2, 4, 5, 7, 9, 10], "min_count": 3 },
+      "dimensions_affected": ["education", "career", "general"],
+      "strength_assessment": {
+        "weak": "the three benefics in the houses but some afflicted",
+        "medium": "Mercury, Jupiter, Venus all in the specified houses, unafflicted",
+        "strong": "all three dignified, with Jupiter in own/exalted"
+      },
+      "effects": "Exceptional learning, scholarship, eloquence, mastery of knowledge and the arts.",
+      "negation_conditions": ["any of the three debilitated or combust"]
+    },
+    {
+      "name": "Sunapha Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "moon-yoga", "variant": "sunapha" },
+      "dimensions_affected": ["wealth", "general"],
+      "strength_assessment": { "weak": "one planet in 2nd from Moon, afflicted", "medium": "benefic in 2nd from Moon", "strong": "strong benefic in 2nd from Moon" },
+      "effects": "Self-earned wealth, intelligence, good reputation.",
+      "negation_conditions": ["only malefics form it"]
+    },
+    {
+      "name": "Anapha Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "moon-yoga", "variant": "anapha" },
+      "dimensions_affected": ["wealth", "health", "general"],
+      "strength_assessment": { "weak": "one planet in 12th from Moon, afflicted", "medium": "benefic in 12th from Moon", "strong": "strong benefic in 12th from Moon" },
+      "effects": "Good health, well-being, comforts, a pleasant disposition.",
+      "negation_conditions": ["only malefics form it"]
+    },
+    {
+      "name": "Durudhura Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "moon-yoga", "variant": "durudhura" },
+      "dimensions_affected": ["wealth", "general"],
+      "strength_assessment": { "weak": "planets on both sides of Moon but afflicted", "medium": "planets in 2nd and 12th from Moon", "strong": "benefics on both sides of Moon" },
+      "effects": "Abundance, generosity, comforts, all-round support.",
+      "negation_conditions": ["only malefics form it"]
+    },
+    {
+      "name": "Kemadruma Yoga",
+      "name_sanskrit": "केमद्रुम योग",
+      "category": "difficult",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "moon-yoga", "variant": "kemadruma" },
+      "dimensions_affected": ["wealth", "career", "relationships", "health", "obstacles"],
+      "strength_assessment": {
+        "weak": "Moon isolated but in own/exalted sign or aspected by a benefic (partial cancellation)",
+        "medium": "Moon with no planets in 2nd/12th and no kendra support",
+        "strong": "Moon isolated, in dusthana, no benefic aspect, no cancellation"
+      },
+      "effects": "Isolation, instability, struggle, emotional loneliness; results fluctuate. Often cancelled — check for planets in kendra from Moon or Lagna.",
+      "negation_conditions": ["planet in kendra from Moon", "Moon in kendra from Lagna", "benefic aspect on Moon", "Moon conjunct a planet"]
+    },
+    {
+      "name": "Daridra Yoga",
+      "category": "difficult",
+      "classical_source": "Phaladeepika",
+      "detection_rule": { "type": "lord-in-houses", "lord_of": 11, "houses": [6, 8, 12] },
+      "dimensions_affected": ["wealth", "obstacles"],
+      "strength_assessment": {
+        "weak": "11th lord in dusthana but aspected by a benefic",
+        "medium": "11th lord in 6/8/12 unaspected by benefics",
+        "strong": "11th lord debilitated in dusthana, afflicted"
+      },
+      "effects": "Financial struggle, blocked income, recurring shortfalls. Often softened by Vipreet Raja Yoga if other dusthana lords interlink.",
+      "negation_conditions": ["strong benefic aspect", "11th lord in own/exalted sign in the dusthana"]
+    },
+    {
+      "name": "Mangal Dosha",
+      "name_sanskrit": "मंगल दोष",
+      "category": "difficult",
+      "classical_source": "Jataka Parijata, popular tradition",
+      "detection_rule": { "type": "custom", "custom": "mangalDosha", "houses": [1, 2, 4, 7, 8, 12], "reference_points": ["Lagna", "Moon", "Venus"] },
+      "dimensions_affected": ["marriage", "relationships"],
+      "strength_assessment": {
+        "weak": "Mars in a dosha house from only one reference point, or strong cancellation present",
+        "medium": "Mars in a dosha house from two reference points",
+        "strong": "Mars in a dosha house from all three reference points, no cancellation"
+      },
+      "effects": "Friction, delay, or discord in marriage. Heavily over-diagnosed in popular practice — always check cancellations and never alarm the user.",
+      "negation_conditions": [
+        "Mars in own/exalted sign (Aries, Scorpio, Capricorn)",
+        "both partners Manglik",
+        "Mars conjunct or aspected by Jupiter",
+        "Mars in Cancer or Leo",
+        "marriage after age 28"
+      ]
+    },
+    {
+      "name": "Kaal Sarp Dosha",
+      "name_sanskrit": "काल सर्प दोष",
+      "category": "difficult",
+      "classical_source": "later tradition (not in BPHS)",
+      "detection_rule": { "type": "custom", "custom": "kaalSarpDosha" },
+      "dimensions_affected": ["obstacles", "health", "karma", "general"],
+      "strength_assessment": {
+        "weak": "partial — most but not all 7 planets hemmed; or a planet exactly on a node",
+        "medium": "all 7 planets between the Rahu-Ketu axis",
+        "strong": "all 7 tightly hemmed, no planet near the nodes, malefics prominent"
+      },
+      "effects": "Energy stagnation, delays, a sense of being blocked; results come in sudden bursts. Note: not a classical BPHS dosha — present it cautiously and never as a curse.",
+      "negation_conditions": ["any planet outside the Rahu-Ketu arc (then it is only partial or absent)"]
+    },
+    {
+      "name": "Pitru Dosha",
+      "name_sanskrit": "पितृ दोष",
+      "category": "difficult",
+      "classical_source": "traditional",
+      "detection_rule": { "type": "conjunction", "planets_pairs": [["Sun", "Rahu"], ["Sun", "Ketu"], ["Sun", "Saturn"]], "or_house_afflicted": 9 },
+      "dimensions_affected": ["family", "children", "obstacles", "karma"],
+      "strength_assessment": {
+        "weak": "Sun mildly associated with a node, 9th lightly afflicted",
+        "medium": "Sun conjunct Rahu/Ketu, or 9th house clearly afflicted",
+        "strong": "Sun tightly conjunct a node AND 9th house heavily afflicted"
+      },
+      "effects": "Ancestral (paternal-line) karmic burden; can touch progeny, father relationship, fortune. Frame constructively, never as a curse.",
+      "negation_conditions": ["strong benefic aspect on Sun and the 9th house"]
+    },
+    {
+      "name": "Guru Chandala Yoga",
+      "category": "difficult",
+      "classical_source": "traditional",
+      "detection_rule": { "type": "conjunction", "planets": ["Jupiter", "Rahu"], "allow_aspect": true },
+      "dimensions_affected": ["obstacles", "education", "spirituality", "career"],
+      "strength_assessment": {
+        "weak": "Jupiter-Rahu only by aspect",
+        "medium": "Jupiter conjunct Rahu",
+        "strong": "Jupiter tightly conjunct Rahu, Jupiter weak"
+      },
+      "effects": "Distortion of wisdom and judgment, unconventional beliefs, risk of scandal; also gives unorthodox brilliance. Not purely negative.",
+      "negation_conditions": ["Jupiter exalted or very strong (then it gives unconventional genius)"]
+    },
+    {
+      "name": "Angarak Yoga",
+      "category": "difficult",
+      "classical_source": "traditional",
+      "detection_rule": { "type": "conjunction", "planets": ["Mars", "Rahu"], "allow_aspect": true },
+      "dimensions_affected": ["obstacles", "health"],
+      "strength_assessment": {
+        "weak": "Mars-Rahu only by aspect",
+        "medium": "Mars conjunct Rahu",
+        "strong": "Mars tightly conjunct Rahu in a dusthana or on Lagna"
+      },
+      "effects": "Anger, impulsiveness, accident-proneness, sudden conflict. Channelled well, it gives fearless drive.",
+      "negation_conditions": ["strong benefic aspect", "Mars in own/exalted sign"]
+    },
+    {
+      "name": "Vish Yoga",
+      "category": "difficult",
+      "classical_source": "traditional",
+      "detection_rule": { "type": "conjunction", "planets": ["Saturn", "Moon"], "allow_aspect": true },
+      "dimensions_affected": ["health", "obstacles", "relationships"],
+      "strength_assessment": {
+        "weak": "Saturn-Moon only by aspect",
+        "medium": "Saturn conjunct Moon",
+        "strong": "Saturn tightly conjunct a weak Moon in a dusthana"
+      },
+      "effects": "Emotional heaviness, melancholy, chronic low mood, a serious disposition. Also gives depth and endurance.",
+      "negation_conditions": ["Moon strong and waxing", "benefic aspect on the Moon"]
+    },
+    {
+      "name": "Shapit Dosha",
+      "category": "difficult",
+      "classical_source": "traditional",
+      "detection_rule": { "type": "conjunction", "planets": ["Saturn", "Rahu"], "allow_aspect": true },
+      "dimensions_affected": ["obstacles", "health", "karma"],
+      "strength_assessment": {
+        "weak": "Saturn-Rahu only by aspect",
+        "medium": "Saturn conjunct Rahu",
+        "strong": "Saturn tightly conjunct Rahu in a dusthana or on Lagna/Moon"
+      },
+      "effects": "A curse-like pattern of repeated delay and obstruction; karmic in flavour. Frame as a karmic lesson with effort-based resolution, never as an irreversible curse.",
+      "negation_conditions": ["strong benefic aspect"]
+    },
+    {
+      "name": "Paap Kartari Yoga",
+      "category": "difficult",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "kartari", "polarity": "malefic" },
+      "dimensions_affected": ["marriage", "obstacles", "health"],
+      "strength_assessment": {
+        "weak": "malefics flanking but one is mild or benefic-aspected",
+        "medium": "malefics in both flanking houses of the target house",
+        "strong": "strong malefics tightly flanking, no benefic relief"
+      },
+      "effects": "The hemmed house is squeezed and weakened — its significations struggle.",
+      "negation_conditions": ["benefic in or aspecting the hemmed house"]
+    },
+    {
+      "name": "Shubha Kartari Yoga",
+      "category": "general-benefic",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "kartari", "polarity": "benefic" },
+      "dimensions_affected": ["marriage", "general"],
+      "strength_assessment": {
+        "weak": "benefics flanking but mild",
+        "medium": "benefics in both flanking houses of the target house",
+        "strong": "strong benefics tightly flanking the house"
+      },
+      "effects": "The hemmed house is protected and supported — its significations flourish.",
+      "negation_conditions": ["malefic in the hemmed house"]
+    },
+    {
+      "name": "Moksha Yoga",
+      "category": "spiritual",
+      "classical_source": "traditional / Jaimini",
+      "detection_rule": { "type": "custom", "custom": "mokshaYoga" },
+      "dimensions_affected": ["spirituality", "karma"],
+      "strength_assessment": {
+        "weak": "Ketu in 12th alone",
+        "medium": "Jupiter or Ketu in 12th, or a moksha-trikona lord in 12th",
+        "strong": "Jupiter + Ketu together in 12th, or multiple 5/9/12 lords in the 12th"
+      },
+      "effects": "Inclination toward liberation, surrender, detachment, monastic or contemplative life.",
+      "negation_conditions": ["strong malefic worldly pull from 10th/11th lords on the 12th"]
+    },
+    {
+      "name": "Pravrajya Yoga",
+      "category": "spiritual",
+      "classical_source": "BPHS",
+      "detection_rule": { "type": "custom", "custom": "pravrajyaYoga" },
+      "dimensions_affected": ["spirituality", "karma"],
+      "strength_assessment": {
+        "weak": "4 planets in one sign",
+        "medium": "4 planets in one sign including a dispositor link",
+        "strong": "4+ planets in one sign, one of them the dispositor of the rest"
+      },
+      "effects": "Renunciation, asceticism, a strong pull away from worldly life.",
+      "negation_conditions": ["strong benefic worldly yogas dominating the chart"]
+    }
+  ]
+}

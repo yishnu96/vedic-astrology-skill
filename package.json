@@ -1,0 +1,21 @@
+{
+  "name": "vedic-astrology-skill",
+  "version": "1.0.0",
+  "description": "Compute and interpret Vedic (Jyotisha) birth charts using Swiss Ephemeris. Agent-facing skill for skills.sh.",
+  "license": "UNLICENSED",
+  "private": true,
+  "engines": { "node": ">=18" },
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "test": "node scripts/test.js"
+  },
+  "dependencies": {
+    "luxon": "^3.4.4",
+    "geo-tz": "^8.0.0",
+    "sweph-wasm": "^2.6.9"
+  },
+  "optionalDependencies": {
+    "swisseph": "^0.5.17"
+  }
+}

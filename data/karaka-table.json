@@ -1,0 +1,30 @@
+{
+  "_note": "Natural significators (naisargika karakas). Topic -> the planets that signify it, with the houses they relate to. Used by read-chart.js and as agent reference.",
+  "natural_karakas": {
+    "Sun": ["soul", "father", "authority", "career", "government", "vitality"],
+    "Moon": ["mind", "mother", "emotions", "public", "comfort"],
+    "Mars": ["siblings", "courage", "land", "property", "energy", "accidents", "surgery"],
+    "Mercury": ["intellect", "speech", "commerce", "education", "communication"],
+    "Jupiter": ["wisdom", "wealth", "children", "dharma", "husband (for women)", "guru", "fortune"],
+    "Venus": ["spouse", "marriage", "love", "luxury", "vehicles", "arts", "comfort"],
+    "Saturn": ["longevity", "discipline", "service", "sorrow", "labour", "delay", "karma"],
+    "Rahu": ["obsession", "foreign things", "sudden events", "ambition", "the unconventional"],
+    "Ketu": ["detachment", "spirituality", "sudden loss", "moksha", "the occult"]
+  },
+  "topic_karakas": {
+    "general": ["Lagna lord", "Moon"],
+    "money": ["Jupiter"],
+    "career": ["Sun", "Saturn", "Mercury", "Jupiter"],
+    "marriage": ["Venus", "Jupiter (for women)"],
+    "children": ["Jupiter"],
+    "property": ["Mars", "Saturn", "Moon"],
+    "education": ["Jupiter", "Mercury"],
+    "spiritual": ["Jupiter", "Ketu"],
+    "problems": ["Saturn", "Rahu", "Ketu"],
+    "accidents": ["Mars", "Ketu", "Rahu"]
+  },
+  "house_karakas": {
+    "1": "Sun", "2": "Jupiter", "3": "Mars", "4": "Moon", "5": "Jupiter", "6": "Mars/Saturn",
+    "7": "Venus", "8": "Saturn", "9": "Jupiter", "10": "Sun/Mercury/Jupiter/Saturn", "11": "Jupiter", "12": "Saturn"
+  }
+}

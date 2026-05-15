@@ -1,0 +1,19 @@
+[
+  {"_note": "SEED FILE — offline geocoding last-resort fallback. Replace with the full GeoNames cities1000 extract (~150k rows, ~5MB) at build time: download https://download.geonames.org/export/dump/cities1000.zip, keep columns name/country/admin1/lat/lon/tz. The entries below are a minimal seed so the skill is functional offline for common places and the bundled examples."},
+  {"name": "Bankura", "country": "IN", "admin1": "West Bengal", "lat": 23.2324, "lon": 87.0718, "tz": "Asia/Kolkata"},
+  {"name": "Kolkata", "country": "IN", "admin1": "West Bengal", "lat": 22.5726, "lon": 88.3639, "tz": "Asia/Kolkata"},
+  {"name": "Mumbai", "country": "IN", "admin1": "Maharashtra", "lat": 19.076, "lon": 72.8777, "tz": "Asia/Kolkata"},
+  {"name": "Pune", "country": "IN", "admin1": "Maharashtra", "lat": 18.5204, "lon": 73.8567, "tz": "Asia/Kolkata"},
+  {"name": "Delhi", "country": "IN", "admin1": "Delhi", "lat": 28.7041, "lon": 77.1025, "tz": "Asia/Kolkata"},
+  {"name": "Bengaluru", "country": "IN", "admin1": "Karnataka", "lat": 12.9716, "lon": 77.5946, "tz": "Asia/Kolkata"},
+  {"name": "Chennai", "country": "IN", "admin1": "Tamil Nadu", "lat": 13.0827, "lon": 80.2707, "tz": "Asia/Kolkata"},
+  {"name": "Hyderabad", "country": "IN", "admin1": "Telangana", "lat": 17.385, "lon": 78.4867, "tz": "Asia/Kolkata"},
+  {"name": "New York", "country": "US", "admin1": "New York", "lat": 40.7128, "lon": -74.006, "tz": "America/New_York"},
+  {"name": "London", "country": "GB", "admin1": "England", "lat": 51.5074, "lon": -0.1278, "tz": "Europe/London"},
+  {"name": "Dubai", "country": "AE", "admin1": "Dubai", "lat": 25.2048, "lon": 55.2708, "tz": "Asia/Dubai"},
+  {"name": "Muscat", "country": "OM", "admin1": "Muscat", "lat": 23.588, "lon": 58.3829, "tz": "Asia/Muscat"},
+  {"name": "Singapore", "country": "SG", "admin1": "Singapore", "lat": 1.3521, "lon": 103.8198, "tz": "Asia/Singapore"},
+  {"name": "Sydney", "country": "AU", "admin1": "New South Wales", "lat": -33.8688, "lon": 151.2093, "tz": "Australia/Sydney"},
+  {"name": "Toronto", "country": "CA", "admin1": "Ontario", "lat": 43.6532, "lon": -79.3832, "tz": "America/Toronto"},
+  {"name": "San Francisco", "country": "US", "admin1": "California", "lat": 37.7749, "lon": -122.4194, "tz": "America/Los_Angeles"}
+]
