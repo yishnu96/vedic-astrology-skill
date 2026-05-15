@@ -3,3 +3,5 @@ charts/*
 !charts/.gitkeep
 .engine-status.json
 *.log
+examples/yishnu.json
+examples/priyanka.json
